@@ -1,0 +1,42 @@
+<ion-header>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Erica+One&family=Montserrat:wght@500&family=Silkscreen&display=swap" rel="stylesheet">
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true" class="background" id="Contenido">
+  <ion-grid class="ion-no-padding">
+    <!--Titulo (TeLlevoAPP)-->
+    <ion-row id="titulo" #animar1>
+      <ion-col size="12">
+        <h1>TeLlevo<span class="app_titulo">APP</span></h1>
+      </ion-col>
+    </ion-row>
+
+    <ion-card>
+      <ion-card-title>Ingrese su usuario y contrase&ntilde;a</ion-card-title>
+      <form [formGroup]="formularioLogin">
+        <ion-item>
+          <ion-input formControlName="usuario" placeholder="Usuario"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input formControlName="password" placeholder="Contrase&ntilde;a" type="password"></ion-input>
+        </ion-item>
+      </form>
+      <ion-button (click)="ingresar()"><b>Ingresar</b></ion-button>
+    </ion-card>
+    
+    
+
+    <!--Recuperar contrasena-->
+    <ion-row id="recuperar_pass">
+      <ion-col size="12">
+        <a [routerLink]="['/recuperar']">Recuperar contrase&ntilde;a</a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  
+</ion-content>
