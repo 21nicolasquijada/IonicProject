@@ -17,12 +17,12 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./Pages/login/login.module').then( m => m.LoginPageModule),
-    canActivate: [NoIngresadoGuard]
+    // canActivate: [NoIngresadoGuard]
   },
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
-    canActivate: [IngresadoGuard]
+    // canActivate: [IngresadoGuard]
    
   },
   {

@@ -43,33 +43,35 @@ export class LoginPage implements OnInit {
 
   ingresar() {
 
-    this.api.getUsuarios().subscribe((data) => {
-      this.users = data
-    });
+    this.router.navigateByUrl('/home');
 
-    this.usuarios = this.users.alumnos
+    // this.api.getUsuarios().subscribe((data) => {
+    //   this.users = data
+    // });
 
-    var f = this.formularioLogin.value;
+    // this.usuarios = this.users.alumnos
 
-    if (this.formularioLogin.invalid) {
-      this.presentAlert();
-    }
+    // var f = this.formularioLogin.value;
 
-    var user = {
-      usuario: f.usuario,
-      password: f.password
-    }
+    // if (this.formularioLogin.invalid) {
+    //   this.presentAlert();
+    // }
 
-    const resultado = this.usuarios.find(element => element.username === user.usuario && element.password === user.password);
-    console.log(resultado)
+    // var user = {
+    //   usuario: f.usuario,
+    //   password: f.password
+    // }
 
-    if (resultado == undefined) {
-      this.presentToast("Su usuario o contrase&ntildea no con correctas",)
-    } else {
-      this.storage.guardarItem('usuario', resultado);
-      localStorage.setItem('ingresado', 'true');
-      this.router.navigate(['/home']);
-    }
+    // const resultado = this.usuarios.find(element => element.username === user.usuario && element.password === user.password);
+    // console.log(resultado)
+
+    // if (resultado == undefined) {
+    //   this.presentToast("Su usuario o contrase&ntildea no con correctas",)
+    // } else {
+    //   this.storage.guardarItem('usuario', resultado);
+    //   localStorage.setItem('ingresado', 'true');
+    //   this.router.navigate(['/home']);
+    // }
 
 
 
